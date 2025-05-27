@@ -23,7 +23,7 @@ const Sidebar = () => {
     <div className={`transition-all duration-300 h-screen bg-white dark:bg-gray-800 shadow-md ${open ? 'w-64' : 'w-16'} fixed z-50`}>
       <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200 dark:border-gray-700">
         <span className={`font-bold text-lg text-gray-800 dark:text-white transition-all duration-300 ${open ? 'block' : 'hidden'}`}>
-          MyApp
+          Smart Budgeting
         </span>
         <button
           className="text-gray-800 dark:text-white focus:outline-none"
