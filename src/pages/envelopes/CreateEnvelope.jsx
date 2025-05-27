@@ -61,7 +61,15 @@ const CreateEnvelope = () => {
             </select>
           </div>
 
-          <div className="text-right">
+          <div className="flex justify-end space-x-3">
+            <button
+              type="button"
+              onClick={() => navigate('/envelopes')}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold px-5 py-2 rounded-lg transition duration-200"
+            >
+              Back
+            </button>
+
             <button
               type="submit"
               className="bg-green-600 hover:bg-green-700 text-white font-semibold px-5 py-2 rounded-lg transition duration-200"
@@ -69,6 +77,7 @@ const CreateEnvelope = () => {
               Submit
             </button>
           </div>
+
         </form>
       </div>
     </Container>

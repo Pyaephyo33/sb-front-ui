@@ -68,7 +68,14 @@ const EditEnvelope = () => {
             </select>
           </div>
 
-          <div className="text-right">
+          <div className="flex justify-end space-x-3">
+            <button
+              type="button"
+              onClick={() => navigate('/envelopes')}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold px-5 py-2 rounded-lg transition duration-200"
+            >
+              Back
+            </button>
             <button
               type="submit"
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-lg transition duration-200"
