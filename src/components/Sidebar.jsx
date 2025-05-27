@@ -4,6 +4,7 @@ import {
   Home,
   Table,
   Layers,
+  Folder,
   ChevronLeft,
   ChevronRight,
 } from 'lucide-react';
@@ -12,6 +13,7 @@ const menuItems = [
   { name: 'Dashboard', icon: <Home className="w-4 h-4" />, path: '/' },
   { name: 'Tables', icon: <Table className="w-4 h-4" />, path: '/tables' },
   { name: 'Categories', icon: <Layers className="w-4 h-4" />, path: '/categories' },
+  { name: 'Envelopes', icon: <Folder className="w-4 h-4" />, path: '/envelopes' }
 ];
 
 const Sidebar = () => {
