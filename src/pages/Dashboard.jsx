@@ -66,19 +66,6 @@ const Dashboard = () => {
       <h1 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Dashboard</h1>
 
       {/* Cards */}
-      {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        {cards.map((card, idx) => (
-          <div
-            key={idx}
-            className={`bg-gradient-to-r ${card.color} text-white rounded-xl p-6 shadow-md transform transition-transform hover:scale-105 hover:shadow-xl`}
-          >
-            <div className="text-sm opacity-90">{card.title}</div>
-            <div className="text-2xl font-semibold">{card.value}</div>
-          </div>
-        ))}
-      </div> */}
-
-      {/* Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
         {cards.map((card, idx) => (
           <div
