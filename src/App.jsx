@@ -17,6 +17,7 @@ import EditEnvelope from './pages/envelopes/EditEnvelope'
 // client
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -38,7 +39,7 @@ const App = () => {
       
 
         {/* Client side */}
-        <Route path='/home' element={<><Navbar /> <Home /></>} />
+        <Route path='/home' element={<><Navbar /> <Home /> <Footer /></>} />
 
 
       </Routes>
