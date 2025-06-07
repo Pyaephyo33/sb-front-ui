@@ -11,7 +11,8 @@ import TableEnvelope from './pages/envelopes/TableEnvelope'
 import CreateEnvelope from './pages/envelopes/CreateEnvelope'
 import EditEnvelope from './pages/envelopes/EditEnvelope'
 
-
+import ListSavingsGoals from './pages/savingsGoals/ListSavingsGoals'
+import CreateSavingsGoals from './pages/savingsGoals/CreateSavingsGoals'
 
 
 // client
@@ -35,8 +36,10 @@ const App = () => {
         <Route path="/envelopes/create" element={<CreateEnvelope />} />
         <Route path="/envelopes/edit/:id" element={<EditEnvelope />} />
 
-
-      
+        {/* Savings Goals */}
+        <Route path='/savings-goals' element={<ListSavingsGoals />} />
+        <Route path='/savings-goals/create' element={<CreateSavingsGoals />} />
+        
 
         {/* Client side */}
         <Route path='/home' element={<><Navbar /> <Home /> <Footer /></>} />

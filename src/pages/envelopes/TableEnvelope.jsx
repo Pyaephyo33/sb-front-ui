@@ -14,6 +14,8 @@ const TableEnvelope = () => {
       <section className="py-4">
         <div className="w-full xl:w-11/12 mb-6 px-4 mx-auto">
           <div className="relative flex flex-col min-w-0 break-words bg-white dark:bg-gray-800 w-full shadow-xl rounded-lg">
+            
+            {/* Header */}
             <div className="rounded-t mb-0 px-4 py-3 border-b border-gray-200 dark:border-gray-700">
               <div className="flex flex-wrap items-center justify-between">
                 <h3 className="font-semibold text-base text-gray-800 dark:text-white">Envelope List</h3>
@@ -26,55 +28,49 @@ const TableEnvelope = () => {
               </div>
             </div>
 
-            <div className="block w-full overflow-x-auto">
-              <table className="items-center w-full border-collapse text-sm">
-                <thead>
-                  <tr className="bg-gray-100 dark:bg-gray-700">
-                    <th className="px-6 py-3 text-xs font-semibold text-left text-gray-600 dark:text-gray-300 uppercase border-b border-gray-200 dark:border-gray-600">
-                      Name
-                    </th>
-                    <th className="px-6 py-3 text-xs font-semibold text-left text-gray-600 dark:text-gray-300 uppercase border-b border-gray-200 dark:border-gray-600">
-                      Budgeted Amount
-                    </th>
-                    <th className="px-6 py-3 text-xs font-semibold text-left text-gray-600 dark:text-gray-300 uppercase border-b border-gray-200 dark:border-gray-600">
-                      Cycle Type
-                    </th>
-                    <th className="px-6 py-3 text-xs font-semibold text-left text-gray-600 dark:text-gray-300 uppercase border-b border-gray-200 dark:border-gray-600">
-                      Actions
-                    </th>
-                  </tr>
-                </thead>
+            {/* Envelope Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+              {sampleData.map((env) => (
+                <div
+                  key={env.id}
+                  className="bg-white dark:bg-gray-900 rounded-2xl p-5 shadow-md hover:shadow-xl hover:-translate-y-1 transform transition-all duration-300"
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <h2 className="text-lg font-bold text-gray-800 dark:text-gray-100">
+                      {env.name}
+                    </h2>
+                    <div className="flex gap-2">
+                      <Link
+                        to={`/envelopes/edit/${env.id}`}
+                        className="text-blue-500 hover:text-blue-700"
+                        title="Edit"
+                      >
+                        <Pencil className="w-4 h-4" />
+                      </Link>
+                      <button className="text-red-500 hover:text-red-700" title="Delete">
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
 
-                <tbody>
-                  {sampleData.map((env) => (
-                    <tr key={env.id} className="hover:bg-gray-50 dark:hover:bg-gray-700 transition">
-                      <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-600 text-gray-800 dark:text-white">
-                        {env.name}
-                      </td>
-                      <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200">
-                        ${env.budgeted_amount}
-                      </td>
-                      <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200">
+                  <div className="space-y-1 text-sm">
+                    <p>
+                      <span className="font-semibold text-gray-500 dark:text-gray-400">Budgeted:</span>{' '}
+                      <span className="text-green-600 dark:text-green-400 font-medium">
+                        ${env.budgeted_amount.toLocaleString()}
+                      </span>
+                    </p>
+                    <p>
+                      <span className="font-semibold text-gray-500 dark:text-gray-400">Cycle:</span>{' '}
+                      <span className="text-yellow-600 dark:text-yellow-400 font-medium capitalize">
                         {env.cycle_type}
-                      </td>
-                      <td className="px-6 py-4 border-b border-gray-200 dark:border-gray-600">
-                        <div className="flex space-x-3">
-                          <Link
-                            to={`/envelopes/edit/${env.id}`}
-                            className="text-blue-300 hover:text-blue-600 inline-flex items-center"
-                          >
-                            <Pencil className='w-4 h-4 mr-1' /> Edit
-                          </Link>
-                          <button className='text-red-300 hover:text-red-600 inline-flex items-center'>
-                            <Trash2 className='w-4 h-4 mr-1' /> Delete
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
+
           </div>
         </div>
       </section>
