@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 
 const Navbar = () => {
@@ -9,9 +8,9 @@ const Navbar = () => {
   return (
     <header className='bg-white shadow-md sticky top-0 z-50 transition-all'>
       <div className="max-w-screen-xl mx-auto px-4 md:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <NavLink to='/' className="text-2xl font-semibold text-gray-800">
-          Smart Budgetting
-        </NavLink>
+        <a href="#home" className="text-2xl font-semibold text-gray-800">
+          Smart Budgeting
+        </a>
 
         <button
           className='md:hidden text-gray-800 focus:outline-none'
@@ -27,24 +26,25 @@ const Navbar = () => {
         </button>
 
         <nav
-          className={`flex-col md:flex-row md:flex items-center md:justify-center gap-4 md:gap-8 flex-grow transition-all duration-300 ease-in-out 
-          ${menuOpen ? 'flex' : 'hidden'} md:flex`}
+          className={`flex-col md:flex-row md:flex items-center md:justify-center gap-4 md:gap-8 flex-grow transition-all duration-300 ease-in-out ${
+            menuOpen ? 'flex' : 'hidden'
+          } md:flex`}
         >
-          <NavLink to="#" className='text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg'>
+          <a href="#home" className="text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg">
             Home
-          </NavLink>
-          <NavLink to="#" className='text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg'>
-            Pricing
-          </NavLink>
-          <NavLink to="#" className='text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg'>
+          </a>
+          <a href="#how-it-works" className="text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg">
             How It Works
-          </NavLink>
-          <NavLink to="#" className='text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg'>
+          </a>
+          <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg">
             About
-          </NavLink>
-          <NavLink to="#" className='text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg'>
-            Contact
-          </NavLink>
+          </a>
+          <a href="#demo" className="text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg">
+            Demo
+          </a>
+          <a href="#pricing" className="text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg">
+            Pricing
+          </a>
 
           <div className="relative">
             <button
@@ -56,15 +56,15 @@ const Navbar = () => {
 
             {dropdownOpen && (
               <div className='absolute right-0 mt-2 bg-white border rounded-lg shadow-lg p-2 w-40 animate-fade-in z-50'>
-                <NavLink to="#" className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded'>
+                <a href="#features" className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded'>
                   Features
-                </NavLink>
-                <NavLink to="#" className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded'>
+                </a>
+                <a href="#faq" className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded'>
                   FAQ
-                </NavLink>
-                <NavLink to="/auth" className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded'>
+                </a>
+                <a href="/auth" className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded'>
                   Login
-                </NavLink>
+                </a>
               </div>
             )}
           </div>
