@@ -19,6 +19,7 @@ import CreateSavingsGoals from './pages/savingsGoals/CreateSavingsGoals'
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Contact from './pages/Contact'
 
 const App = () => {
   return (
@@ -43,6 +44,7 @@ const App = () => {
 
         {/* Client side */}
         <Route path='/home' element={<><Navbar /> <Home /> <Footer /></>} />
+        <Route path='/contact' element={<><Navbar /> <Contact /> </>} />
 
 
       </Routes>

@@ -45,6 +45,9 @@ const Navbar = () => {
           <a href="#pricing" className="text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg">
             Pricing
           </a>
+          <a href="/contact" className="text-gray-700 hover:text-blue-600 font-medium text-base md:text-lg">
+            Contact
+          </a>
 
           <div className="relative">
             <button
