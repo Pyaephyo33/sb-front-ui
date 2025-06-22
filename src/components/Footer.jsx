@@ -25,10 +25,10 @@ const Footer = () => {
           <div className="sm:w-1/4">
             <h4 className="uppercase font-bold text-white mb-4 text-sm">Menu</h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-indigo-300 transition">Home</a></li>
-              <li><a href="#" className="hover:text-indigo-300 transition">Services</a></li>
+              <li><a href="#home" className="hover:text-indigo-300 transition">Home</a></li>
+              <li><a href="#how-it-works" className="hover:text-indigo-300 transition">Services</a></li>
               <li><a href="#" className="hover:text-indigo-300 transition">Products</a></li>
-              <li><a href="#" className="hover:text-indigo-300 transition">Pricing</a></li>
+              <li><a href="#pricing" className="hover:text-indigo-300 transition">Pricing</a></li>
             </ul>
           </div>
 
