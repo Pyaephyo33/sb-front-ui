@@ -14,6 +14,7 @@ import EditEnvelope from './pages/envelopes/EditEnvelope'
 import ListSavingsGoals from './pages/savingsGoals/ListSavingsGoals'
 import CreateSavingsGoals from './pages/savingsGoals/CreateSavingsGoals'
 
+import Profile from './pages/auth/Profile'
 
 // client
 import Home from './pages/Home'
@@ -30,6 +31,7 @@ const App = () => {
         <Route path='/tables' element={<Tables />} />
         <Route path='/categories' element={<Categories />} />
         <Route path='/auth' element={<Auth />} />
+        <Route path='/profile' element={<Profile />} />
 
 
         {/* Envelope */}

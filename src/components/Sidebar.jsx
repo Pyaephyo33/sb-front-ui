@@ -35,6 +35,22 @@ const Sidebar = () => {
         </button>
       </div>
 
+
+      <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
+        <NavLink
+          to="/profile"
+          className="flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded transition"
+        >
+          <img
+            src="https://ui-avatars.com/api/?name=User&background=random"
+            alt="Profile"
+            className="w-8 h-8 rounded-full"
+          />
+          {open && <span className="text-gray-800 dark:text-white font-medium">John Doe</span>}
+        </NavLink>
+      </div>
+
+
       <nav className="mt-4">
         {menuItems.map((item) => (
           <NavLink
