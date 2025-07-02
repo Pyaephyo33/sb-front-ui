@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   Goal,
+  Settings
 } from 'lucide-react';
 
 const menuItems = [
@@ -69,6 +70,19 @@ const Sidebar = () => {
           </NavLink>
         ))}
       </nav>
+
+
+      {/* Settings Icon at Bottom */}
+      <div className="absolute bottom-4 left-0 w-full px-4">
+        <NavLink
+          to="/settings"
+          className="flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-gray-700 p-2 rounded transition justify-start"
+        >
+          <Settings className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+          {open && <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Settings</span>}
+        </NavLink>
+      </div>
+
     </div>
   );
 };

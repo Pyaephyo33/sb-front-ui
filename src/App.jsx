@@ -15,6 +15,8 @@ import ListSavingsGoals from './pages/savingsGoals/ListSavingsGoals'
 import CreateSavingsGoals from './pages/savingsGoals/CreateSavingsGoals'
 
 import Profile from './pages/auth/Profile'
+import Settings from './pages/auth/Settings'
+import UserAccount from './pages/auth/UserAccount'
 
 // client
 import Home from './pages/Home'
@@ -32,6 +34,8 @@ const App = () => {
         <Route path='/categories' element={<Categories />} />
         <Route path='/auth' element={<Auth />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/settings' element={<Settings />} />
+        <Route path='/user-account' element={<UserAccount />} />
 
 
         {/* Envelope */}
