@@ -14,6 +14,10 @@ import EditEnvelope from './pages/envelopes/EditEnvelope'
 import ListSavingsGoals from './pages/savingsGoals/ListSavingsGoals'
 import CreateSavingsGoals from './pages/savingsGoals/CreateSavingsGoals'
 
+import TransactionList from './pages/transaction/TransactionList'
+import TransactionDetails from './pages/transaction/TransactionDetails'
+import CreateTransaction from './pages/transaction/CreateTransaction'
+
 import Profile from './pages/auth/Profile'
 import Settings from './pages/auth/Settings'
 import UserAccount from './pages/auth/UserAccount'
@@ -47,7 +51,10 @@ const App = () => {
         <Route path='/savings-goals' element={<ListSavingsGoals />} />
         <Route path='/savings-goals/create' element={<CreateSavingsGoals />} />
         
-
+        {/* Transactions */}
+        <Route path='/transactions' element={<TransactionList />} />
+        <Route path='/transactions/create' element={<CreateTransaction />} />
+        <Route path='/transactions/:id' element={<TransactionDetails />} />
         {/* Client side */}
         <Route path='/home' element={<><Navbar /> <Home /> <Footer /></>} />
         <Route path='/contact' element={<><Navbar /> <Contact /> </>} />
