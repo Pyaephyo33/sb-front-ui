@@ -17,6 +17,7 @@ import CreateSavingsGoals from './pages/savingsGoals/CreateSavingsGoals'
 import TransactionList from './pages/transaction/TransactionList'
 import TransactionDetails from './pages/transaction/TransactionDetails'
 import CreateTransaction from './pages/transaction/CreateTransaction'
+import ExpenseTracking from './pages/transaction/ExpenseTracking'
 
 import Profile from './pages/auth/Profile'
 import Settings from './pages/auth/Settings'
@@ -55,6 +56,7 @@ const App = () => {
         <Route path='/transactions' element={<TransactionList />} />
         <Route path='/transactions/create' element={<CreateTransaction />} />
         <Route path='/transactions/:id' element={<TransactionDetails />} />
+        <Route path='/expense-tracking' element={<ExpenseTracking />} />
         {/* Client side */}
         <Route path='/home' element={<><Navbar /> <Home /> <Footer /></>} />
         <Route path='/contact' element={<><Navbar /> <Contact /> </>} />

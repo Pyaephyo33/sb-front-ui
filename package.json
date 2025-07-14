@@ -21,7 +21,8 @@
     "react-router-dom": "^7.6.1",
     "react-scroll": "^1.9.3",
     "sb-front-ui": "file:",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.7",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

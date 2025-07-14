@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Eye, PlusCircle, XCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Container from '../../components/Container';
 
 const transactions = [
@@ -23,9 +24,11 @@ const transactions = [
 const TransactionList = () => {
   const [search, setSearch] = useState('');
   const [selectedTx, setSelectedTx] = useState(null);
+  const [filterType, setFilterType] = useState('all');
 
   const filtered = transactions.filter(tx =>
-    tx.notes.toLowerCase().includes(search.toLowerCase())
+    tx.notes.toLowerCase().includes(search.toLowerCase()) &&
+    (filterType === 'all' || tx.type === filterType)
   );
 
   return (
@@ -34,16 +37,35 @@ const TransactionList = () => {
         {/* Header */}
         <div className="flex justify-between items-center mb-6 px-4">
           <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">Transaction History</h2>
-          <button
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-md hover:shadow-lg transition"
+          {/* <Link
+            to="/transactions/create"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-md hover:shadow-lg transition text-sm font-medium"
           >
-            <PlusCircle className="w-5 h-5" /> New Transaction
-          </button>
+            <PlusCircle className="w-5 h-5" strokeWidth={2} />
+            <span>New Transaction</span>
+          </Link> */}
+          <div className="flex gap-2">
+          <Link
+            to="/transactions/create"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-md hover:shadow-lg transition text-sm font-medium"
+          >
+            <PlusCircle className="w-5 h-5" strokeWidth={2} />
+            <span>New Transaction</span>
+          </Link>
+          <Link
+            to="/expense-tracking"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg shadow-md hover:shadow-lg transition text-sm font-medium"
+          >
+            📊 <span>Expense Tracking</span>
+          </Link>
         </div>
 
-        {/* Search */}
-        <div className="px-4 mb-6">
-          <div className="relative max-w-md">
+        </div>
+        
+
+        {/* Search and Filter */}
+        <div className="px-4 mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <div className="relative w-full md:w-1/2">
             <Search className="absolute left-3 top-2.5 text-gray-400" size={18} />
             <input
               value={search}
@@ -51,6 +73,26 @@ const TransactionList = () => {
               placeholder="Search by notes..."
               className="pl-10 pr-4 py-2 w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:ring-2 focus:ring-blue-500 transition"
             />
+          </div>
+          <div className="flex gap-2">
+            <button
+              onClick={() => setFilterType('all')}
+              className={`px-4 py-2 rounded-lg text-sm transition shadow ${filterType === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'}`}
+            >
+              All
+            </button>
+            <button
+              onClick={() => setFilterType('income')}
+              className={`px-4 py-2 rounded-lg text-sm transition shadow ${filterType === 'income' ? 'bg-green-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'}`}
+            >
+              Income
+            </button>
+            <button
+              onClick={() => setFilterType('expense')}
+              className={`px-4 py-2 rounded-lg text-sm transition shadow ${filterType === 'expense' ? 'bg-red-600 text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200'}`}
+            >
+              Expense
+            </button>
           </div>
         </div>
 
